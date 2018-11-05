@@ -1,0 +1,15 @@
+ function Login() {
+    var uname = document.getElementById("txtUserName").value
+    var pass = document.getElementById("txtPassword").value
+    $.getJSON("UserDetails.txt", function (data) {
+        if (uname == data.UName) {
+            if (pass == data.UPass) {
+    window.location.href = "QPage_1.aspx"
+}
+else
+    alert("Password invalid")
+}
+else
+alert("Username invalid")
+})
+}

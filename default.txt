@@ -1,0 +1,35 @@
+<%@ Page Language="C#" AutoEventWireup="true" Trace="false" CodeBehind="default.aspx.cs" Inherits="QuizApplication._default" %>
+
+<!DOCTYPE html>
+
+<html  xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server" >
+    <title>Quizzy</title>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link href="bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet" />
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="jQuery/jquery-1.11.1.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="MyScript.js"></script>
+   
+</head>
+<body >
+    <form id="form1" runat="server" >
+        <div class="container text-center">
+            <div class="jumbotron"><h2>Welcome</h2></div>
+            <br />
+            <div >
+                <div><input type="text" maxlength="8" class="text-center" placeholder="Enter Username" id="txtUserName"/></div>
+                <br /><br />
+                <div><input type="password" maxlength="8" class="text-center" placeholder="Enter Password" id="txtPassword"/></div>
+                <br /><br />
+                <input type="button" id="btnLogin" class="btn btn-primary" runat="server" value="Login" onclick="Login()"/>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

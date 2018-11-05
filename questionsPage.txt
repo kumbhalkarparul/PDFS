@@ -1,0 +1,71 @@
+<%@ Page Language="C#" AutoEventWireup="true" Trace="false" CodeBehind="QPage_1.aspx.cs" Inherits="QuizApplication.QPage_1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Question Page 1</title>
+     <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link href="bootstrap-3.2.0-dist/css/bootstrap.min.css" rel="stylesheet" />
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="jQuery/jquery-1.11.1.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="MyScript.js"></script>
+    <script>
+       function MyFunc() {
+            var start = 0;
+            var end = 4;
+            $.getJSON("Questions.txt", function (q1) {
+                var paras = document.getElementsByTagName("p");
+                for (var i = 0; i < paras.length; i++) {
+                    paras[i].innerHTML = "<b>" + q1.Question[i] + "</b><br/>";
+                    for (var j = start; j < end; j++) {
+                        paras[i].innerHTML += '<input type="radio" name="ques' + i + '"  id="' + j + '"/>' + q1.Answers[j] + '<br/>'
+                    }
+                    start = start + 4;
+                    end = end + 4;
+                }
+            })
+        }
+        
+       function validate() {
+    var point = 0;
+    $.getJSON("Questions.txt", function (check) {
+        for (var i = 0; i < 3; i++) {
+
+            if (document.getElementById(check.correctAns[i]).checked)
+                point++;
+
+        }
+        alert(point);
+    })
+
+}
+        
+    </script>
+</head>
+<body onload="MyFunc()">
+    
+    <form id="form1" runat="server" >
+        
+        <br />
+        <div class="container">
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+        </div>
+        <div style="text-align:center">
+            <input type="button" class="btn btn-success" value="Submit Quiz Answers" onclick="validate()" id="btnAnsSubmit" />
+        </div>
+    </form>
+</body>
+</html>

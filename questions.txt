@@ -1,0 +1,23 @@
+{
+"Question":["1.What is 2+2?",
+"2.What color is the sky?",
+"3.What is the default event for combo box?",
+"4.Which of the following namespaces should be imported in order to develop a windows forms application?",
+"5.Which of the following dialog boxes should be used to select a file for opening?",
+"6.Which of the following is an access specifier?",
+"7.Subqueries can be nested inside the _________ clause.",
+"8."],
+
+
+"Answers":[2,4,8,10,
+"Blue","Red","Orange","Purple",
+"Click","DoubleClick","SelectedIndexChanged","KeyPress",
+"Using System","Using System.Drawing","Using System.Windows.Forms","All of the above",
+"OpenFileDialog", "FileDialog", "FileOpener", "OpenDialog",
+"Private","Public","Protected","All of the above",
+"Where","Group By","Like","Select",
+"","","",""],
+
+
+"correctAns":[1,4,10,15,16,23,24]
+}
